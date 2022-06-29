@@ -1,0 +1,13 @@
+- hosts: hosts
+  become: yes
+  gather_facts: yes
+  vars:
+    service_host: "www.service.com"
+    service_admin_email: "admin@service.com"
+    service_name: "service_name"
+    service_root_directory: "/opt"
+    letsencrypt_ssl_dir: "/etc/letsencrypt/live"
+  roles:
+    - nginx
+    - letsencrypt
+    - service
